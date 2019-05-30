@@ -8,14 +8,16 @@
         Keep reading
       </button>
       <AnimatedContainer>
+
         {{#animated-if isShowing use=this.transition}}
           <p>
             In the projection of traditional celluloid films.
-          </p>
-          <p>
             The perception of motion is due to a psychological effect called the phi phenomenon.
           </p>
+        {{else}}
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         {{/animated-if}}
+
       </AnimatedContainer>
     </div>
   </div>

@@ -7,13 +7,13 @@ export default Controller.extend({
 
   // transition: fade
 
-  transition: function*({ insertedSprites, removedSprites }) {
-    for (let sprite of insertedSprites) {
-      fadeIn(sprite);
+  transition: function*({ insertedSprites, removedSprites, duration }) {
+    for (let sprite of removedSprites) {
+      yield fadeOut(sprite, { duration: duration / 2 });
     }
 
-    for (let sprite of removedSprites) {
-      fadeOut(sprite);
+    for (let sprite of insertedSprites) {
+      fadeIn(sprite, { duration: duration / 2 });
     }
   }
 
