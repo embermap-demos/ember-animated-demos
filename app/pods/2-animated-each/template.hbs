@@ -1,0 +1,18 @@
+<div class="w-screen h-screen bg-grey-light">
+
+  <div class="pt-4">
+    <ul class='list-reset max-w-sm mx-auto'>
+      {{#animated-each this.tags use=this.transition as |tag|}}
+        <li class='bg-white px-4 py-2 mt-4 flex items-center'>
+          <span>{{tag}}</span>
+          <span class="ml-auto">
+            <button class='p-3' {{action 'removeTag' tag}}>
+              {{fa-icon 'times'}}
+            </button>
+          </span>
+        </li>
+      {{/animated-each}}
+    </ul>
+  </div>
+
+</div>

@@ -8,6 +8,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('1-animated-if');
+  this.route('2-animated-each');
 });
 
 export default Router;
