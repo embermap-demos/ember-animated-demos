@@ -1,5 +1,5 @@
 import Controller from '@ember/controller';
-import fade from 'ember-animated/transitions/fade';
+// import fade from 'ember-animated/transitions/fade';
 
 import { fadeIn, fadeOut } from 'ember-animated/motions/opacity';
 
