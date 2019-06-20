@@ -15,5 +15,6 @@
 
 export default {
   "0": "0",
+  "32": "8rem",
   full: "100%"
 };

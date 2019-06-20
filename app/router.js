@@ -9,6 +9,7 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route("1-animated-if");
   this.route("2-animated-each");
+  this.route("3-iphone-apps");
 });
 
 export default Router;

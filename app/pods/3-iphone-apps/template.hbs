@@ -1,0 +1,16 @@
+<div class="w-screen h-screen">
+
+  <div class="max-w-md mx-auto flex flex-wrap px-4 pt-8">
+
+    {{#each this.apps as |app|}}
+      <div {{action 'removeApp' app}} class="
+        bg-{{app.color}} text-white text-xl font-bold w-32 h-32 mx-2 my-2
+        shadow rounded flex items-center justify-center flex-no-shrink
+      ">
+        {{app.name}}
+      </div>
+    {{/each}}
+
+  </div>
+
+</div>
