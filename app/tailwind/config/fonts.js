@@ -17,39 +17,39 @@
 |
 */
 
- export default {
-  'sans': [
-    'system-ui',
-    'BlinkMacSystemFont',
-    '-apple-system',
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    'sans-serif',
+export default {
+  sans: [
+    "system-ui",
+    "BlinkMacSystemFont",
+    "-apple-system",
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    "sans-serif"
   ],
-  'serif': [
-    'Constantia',
-    'Lucida Bright',
-    'Lucidabright',
-    'Lucida Serif',
-    'Lucida',
-    'DejaVu Serif',
-    'Bitstream Vera Serif',
-    'Liberation Serif',
-    'Georgia',
-    'serif',
+  serif: [
+    "Constantia",
+    "Lucida Bright",
+    "Lucidabright",
+    "Lucida Serif",
+    "Lucida",
+    "DejaVu Serif",
+    "Bitstream Vera Serif",
+    "Liberation Serif",
+    "Georgia",
+    "serif"
   ],
-  'mono': [
-    'Menlo',
-    'Monaco',
-    'Consolas',
-    'Liberation Mono',
-    'Courier New',
-    'monospace',
-  ],
+  mono: [
+    "Menlo",
+    "Monaco",
+    "Consolas",
+    "Liberation Mono",
+    "Courier New",
+    "monospace"
+  ]
 };
