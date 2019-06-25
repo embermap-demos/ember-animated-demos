@@ -10,6 +10,7 @@ Router.map(function() {
   this.route("1-animated-if");
   this.route("2-animated-each");
   this.route("3-iphone-apps");
+  this.route("4-animated-value");
 });
 
 export default Router;

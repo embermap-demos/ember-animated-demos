@@ -1174,6 +1174,11 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
+animejs@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/animejs/-/animejs-3.0.1.tgz#8b808bad575e3b6106489d8b04b92bc4062166fe"
+  integrity sha512-7mMoBQScvA7s4zm3EVgnuXXrtOu6TJNAhU+Ajo7HsXYH0NwbuZIcRHMO65a9NyUlmAXz4VPxlK5cENNOQbCi8g==
+
 ansi-escapes@^3.0.0, ansi-escapes@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-3.2.0.tgz#8780b98ff9dbf5638152d1f1fe5c1d7b4442976b"
@@ -3511,6 +3516,11 @@ cyclist@~0.2.2:
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
   integrity sha1-GzN5LhHpFKL9bW7WRHRkRE5fpkA=
 
+d3-ease@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/d3-ease/-/d3-ease-1.0.5.tgz#8ce59276d81241b1b72042d6af2d40e76d936ffb"
+  integrity sha512-Ct1O//ly5y5lFM9YTdu+ygq7LleSgSE4oj7vUt9tPLHUi8VCV7QoizGpdWRWAwCO9LdYzIrQDg97+hGVdsSGPQ==
+
 dag-map@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/dag-map/-/dag-map-2.0.2.tgz#9714b472de82a1843de2fba9b6876938cab44c68"
@@ -4803,6 +4813,11 @@ extglob@^2.0.4:
     regex-not "^1.0.0"
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
+
+faker@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/faker/-/faker-4.1.0.tgz#1e45bbbecc6774b3c195fad2835109c6d748cc3f"
+  integrity sha1-HkW7vsxndLPBlfrSg1EJxtdIzD8=
 
 fast-deep-equal@^1.0.0:
   version "1.1.0"
