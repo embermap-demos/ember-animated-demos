@@ -1,7 +1,26 @@
 import Controller from "@ember/controller";
 import { A } from "@ember/array";
+import move from "ember-animated/motions/move";
+import { fadeOut } from "ember-animated/motions/opacity";
 
 export default Controller.extend({
+  *transition({ keptSprites, removedSprites, beacons }) {
+    yield Promise.all(
+      removedSprites.map(sprite => {
+        sprite.endAtSprite(beacons.trash);
+        sprite.applyStyles({
+          zIndex: 99
+        });
+
+        return Promise.all([move(sprite), fadeOut(sprite)]);
+      })
+    );
+
+    for (let sprite of keptSprites) {
+      move(sprite);
+    }
+  },
+
   init() {
     this._super(...arguments);
 

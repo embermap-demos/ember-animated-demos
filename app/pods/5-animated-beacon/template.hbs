@@ -6,13 +6,15 @@
       <a href="" class='text-grey-darkest no-underline border px-3 py-2 font-bold rounded flex items-center justify-center text-2xl'>
         Trash
 
-        <span class='relative ml-2'>
-          {{fa-icon 'trash'}}
+        {{#animated-beacon name='trash'}}
+          <span class='relative ml-2'>
+            {{fa-icon 'trash'}}
 
-          <span class="absolute text-white pin text-xs flex items-center justify-center pt-1 font-bold">
-            {{this.deletedItems.length}}
+            <span class="absolute text-white pin text-xs flex items-center justify-center pt-1 font-bold">
+              {{this.deletedItems.length}}
+            </span>
           </span>
-        </span>
+        {{/animated-beacon}}
       </a>
 
     </div>
@@ -30,7 +32,7 @@
     </div>
     <div class="w-4/5">
       <ul class='list-reset'>
-        {{#each items as |item|}}
+        {{#animated-each items use=this.transition as |item|}}
           <li>
             <button {{action 'toggle' item}} class="
               block w-full px-3 py-2 text-left focus:outline-none
@@ -39,7 +41,7 @@
               File {{item.name}}
             </button>
           </li>
-        {{/each}}
+        {{/animated-each}}
       </ul>
     </div>
   </div>
