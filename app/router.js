@@ -11,6 +11,7 @@ Router.map(function() {
   this.route("2-animated-each");
   this.route("3-iphone-apps");
   this.route("4-animated-value");
+  this.route("5-animated-beacon");
 });
 
 export default Router;

@@ -1,0 +1,46 @@
+<div class="w-screen min-h-screen">
+  <header class='py-8 bg-grey-light sticky pin-t pin-x shadow border-b border-grey relative z-1'>
+    <div class="max-w-lg mx-auto px-8 flex justify-between">
+      <h1>My Computer</h1>
+
+      <a href="" class='text-grey-darkest no-underline border px-3 py-2 font-bold rounded flex items-center justify-center text-2xl'>
+        Trash
+
+        <span class='relative ml-2'>
+          {{fa-icon 'trash'}}
+
+          <span class="absolute text-white pin text-xs flex items-center justify-center pt-1 font-bold">
+            {{this.deletedItems.length}}
+          </span>
+        </span>
+      </a>
+
+    </div>
+  </header>
+
+  <div class="max-w-lg mx-auto mt-12 px-8 flex">
+    <div class="w-1/5">
+      <div class="fixed">
+        <button class='bg-blue text-white px-3 py-2 rounded focus:outline-none focus:shadow-outline'
+          {{action 'deleteSelectedItems'}}
+        >
+          Delete {{this.selectedItems.length}} items
+        </button>
+      </div>
+    </div>
+    <div class="w-4/5">
+      <ul class='list-reset'>
+        {{#each items as |item|}}
+          <li>
+            <button {{action 'toggle' item}} class="
+              block w-full px-3 py-2 text-left focus:outline-none
+              {{if (contains item this.selectedItems) 'bg-blue text-white' 'hover:bg-grey-lighter'}}
+            ">
+              File {{item.name}}
+            </button>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>

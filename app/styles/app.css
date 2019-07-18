@@ -1,2 +1,5 @@
-@import 'tailwind.css';
+@import "tailwind.css";
 
+.z-1 {
+  z-index: 1;
+}
