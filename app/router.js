@@ -13,6 +13,7 @@ Router.map(function() {
   this.route("4-animated-value");
   this.route("5-animated-beacon");
   this.route("6-between-lists");
+  this.route("7-selected-item");
 });
 
 export default Router;
