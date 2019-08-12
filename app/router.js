@@ -14,6 +14,9 @@ Router.map(function() {
   this.route("5-animated-beacon");
   this.route("6-between-lists");
   this.route("7-selected-item");
+  this.route("8-nested-routes", function() {
+    this.route("word", { path: ":word_id" });
+  });
 });
 
 export default Router;
