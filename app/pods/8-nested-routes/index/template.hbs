@@ -1,9 +1,11 @@
-<div class="mt-8 flex flex-wrap">
-  {{#animated-each this.words use=this.transition  finalRemoval=this.appState.didRender initialInsertion=this.appState.didRender as |word|}}
-    <div class="w-1/3 px-2 pb-4">
-      {{#link-to '8-nested-routes.word' word class='bg-white h-32 text-lg font-bold flex justify-center items-center shadow text-grey-darkest no-underline'}}
-        <span>{{word}}</span>
-      {{/link-to}}
+<div class="mt-8 -mx-2 flex flex-wrap">
+  {{#each this.words as |word|}}
+    <div class="w-1/3 px-2 mb-4">
+      {{#animated-value word use=this.transition finalRemoval=this.appState.didRender initialInsertion=this.appState.didRender as |value|}}
+        {{#link-to '8-nested-routes.word' word class='bg-white h-32 text-lg font-bold flex justify-center items-center shadow text-grey-darkest no-underline'}}
+          <span>{{value}}</span>
+        {{/link-to}}
+      {{/animated-value}}
     </div>
-  {{/animated-each}}
+  {{/each}}
 </div>
