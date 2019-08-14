@@ -10,37 +10,10 @@ export default Controller.extend({
   appState: service(),
   router: service(),
 
-  *transition({
-    duration,
-    insertedSprites,
-    receivedSprites,
-    removedSprites,
-    sentSprites
-  }) {
-    // console.log(arguments[0]);
-    sentSprites.forEach(sprite => {
-      // debugger;
-      sprite.element.querySelector("span").style.opacity = 0;
-      resize(sprite, { duration: duration * (3 / 4) });
-      move(sprite, { duration: duration * (3 / 4) });
-    });
-    // sentSprites.forEach(sprite => {
-    //   sprite.element.querySelector("span").style.opacity = 0;
-    // });
-    //
-    // [...removedSprites, ...sentSprites].forEach(sprite => {
-    //   fadeOut(sprite, { duration: duration * (1 / 3) });
-    // });
-    // console.log(arguments[0]);
-    //
-    // yield wait(duration / 2);
-    //
-    // insertedSprites.forEach(fadeIn);
-    //
-    // receivedSprites.forEach(sprite => {
-    //   sprite.moveToFinalPosition();
-    //   fadeIn(sprite, { from: 0 });
-    // });
+  *transition({ duration, removedSprites }) {
+    for (let sprite of removedSprites) {
+      fadeOut(sprite, { duration: duration * (1 / 4) });
+    }
   },
 
   init() {
