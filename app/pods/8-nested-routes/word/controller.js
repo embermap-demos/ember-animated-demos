@@ -7,6 +7,7 @@ import resize from "ember-animated/motions/resize";
 import scale from "ember-animated/motions/scale";
 import { wait } from "ember-animated";
 import { inject as service } from "@ember/service";
+import { easeExpIn, easeExpOut } from "d3-ease";
 
 import { wait as waitUtil, Motion } from "ember-animated";
 
@@ -23,54 +24,49 @@ class Wait extends Motion {
 export default Controller.extend({
   appState: service(),
 
-  *parentTransition({ duration, receivedSprites, sentSprites }) {
+  *transition({ duration, receivedSprites, sentSprites }) {
     for (let sprite of receivedSprites) {
-      sprite.applyStyles({
-        width: sprite.initialBounds.width,
-        height: sprite.initialBounds.height
-      });
-      // debugger;
-      sprite.element.querySelector(
-        "div"
-      ).style.width = `${sprite.finalBounds.width}px`;
-
-      // Delay by 1/8 duration to give removed sprites chance to fade out
-      yield freeze(sprite, { duration: duration / 8 });
-
-      resize(sprite, { duration: duration * (7 / 8) });
-      move(sprite, { duration: duration * (7 / 8) });
+      // adjustCSS.property("font-size")(sprite);
+      // resize(sprite);
+      adjustColor.property("color")(sprite);
+      yield freeze(sprite, { duration: duration * 1 });
+      move(sprite);
+      // let finalAspectRatio =
+      //   sprite.finalBounds.height / sprite.finalBounds.width;
+      //
+      // sprite._initialBounds.height =
+      //   finalAspectRatio * sprite.initialBounds.width;
+      //
+      // fadeIn(sprite, { from: 0 });
+      // scale(sprite);
+      // move(sprite);
     }
 
-    console.log("parent ", arguments[0]);
-
     for (let sprite of sentSprites) {
-      // sprite.applyStyles({
-      //   width: sprite.initialBounds.width,
-      //   height: sprite.initialBounds.height
-      // });
-      // sprite.element.querySelector(
-      //   "div"
-      // ).style.width = `${sprite.finalBounds.width}px`;
-      // yield freeze(sprite, { duration: duration / 8 });
+      yield freeze(sprite, { duration: duration * 0.5 });
+      move(sprite);
+      // adjustCSS.property("font-size")(sprite);
+      // let ar = sprite.initialBounds.height / sprite.initialBounds.width;
+      // sprite._finalBounds.height = ar * sprite.finalBounds.width;
       //
-      resize(sprite, { duration: duration * (7 / 8) });
-      move(sprite, { duration: duration * (7 / 8) });
+      // fadeOut(sprite, { to: 0 });
+      // scale(sprite);
+      // move(sprite);
     }
   },
 
-  *rest({ duration, receivedSprites, sentSprites, removedSprites }) {
+  *bodyTransition({ duration, receivedSprites, sentSprites, removedSprites }) {
+    console.log(arguments[0]);
     for (let sprite of receivedSprites) {
-      yield wait(duration * (1 / 2));
       sprite.moveToFinalPosition();
-      fadeIn(sprite, { from: 0, duration: duration * (1 / 2) });
+      sprite.applyStyles({ opacity: 0 });
+      yield freeze(sprite, { duration: duration * 1.5 });
+      fadeIn(sprite, { from: 0, duration: duration / 2 });
+      // move(sprite);
     }
 
-    console.log("child ", arguments[0]);
-
     for (let sprite of removedSprites) {
-      // freeze(sprite);
-      //   sprite.applyStyles({ zIndex: 99 });
-      //   fadeOut(sprite, { from: 1, to: 0, duration: duration * (1 / 8) });
+      fadeOut(sprite, { to: 0, duration: duration / 2 });
     }
   }
 });

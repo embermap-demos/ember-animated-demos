@@ -1,30 +1,42 @@
 <div class="mt-12">
-  {{#animated-value model use=this.parentTransition as |value|}}
-    <div class='flex justify-center overflow-hidden'>
-      <div class='w-full flex-no-shrink'>
-        <div class="py-12 text-center bg-white shadow-lg flex flex-col items-center">
+  <div class="flex justify-center overflow-hidden">
+    <div class="w-full flex-no-shrink">
+      {{! class="py-12 text-center bg-white shadow-lg flex flex-col items-center" }}
+      <div class="py-12 flex flex-col items-center">
+        <AnimatedContainer>
+          {{#animated-value
+            model
+            use=this.transition
+            finalRemoval=true as |value|
+          }}
+            <div class="text-2xl font-bold">
+              <p>
+                {{value}}
+              </p>
+            </div>
+          {{/animated-value}}
+        </AnimatedContainer>
 
-          {{!-- {{#animated-value value use=this.titleTransition as |value|}} --}}
-            <p class='pt-1 text-lg font-bold'>{{value}}</p>
-          {{!-- {{/animated-value}} --}}
-
-          {{!-- {{#animated-if initialInsertion=this.appState.didRender use=this.fade}} --}}
-          {{!-- <AnimatedContainer> --}}
-          {{!-- {{#animated-value initialInsertion=this.appState.didRender use=this.fade}} --}}
-          <AnimatedContainer>
-            {{#animated-value model finalRemoval=this.appState.didRender use=this.rest}}
-              <div class='py-4 text-left max-w-sm mx-auto'>
-                <p class='mt-4'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p class='mt-4'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p class='mt-4'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-            {{/animated-value}}
-          </AnimatedContainer>
-        </div>
+        <AnimatedContainer>
+          {{#animated-value
+            model
+            use=this.bodyTransition
+            finalRemoval=true as |value|
+          }}
+            <div class="pt-8 pb-4 text-left max-w-sm mx-auto">
+              <p class="mt-4">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <p class="mt-4">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <p class="mt-4">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          {{/animated-value}}
+        </AnimatedContainer>
       </div>
     </div>
-  {{/animated-value}}
-
-  {{!-- {{#animated-value use=(action this.fade) initialInsertion=this.appState.didRender finalRemoval=this.appState.didRender}}
-  {{/animated-value}} --}}
+  </div>
 </div>
