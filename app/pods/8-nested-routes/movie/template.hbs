@@ -10,7 +10,11 @@
 
   <div class="pt-8 flex">
     <div class="w-1/3">
-      <img src={{this.model.posterUrl}} alt="" />
+      {{#animated-value this.model use=this.transition as |value|}}
+        <div>
+          <img src={{value.posterUrl}} alt="" />
+        </div>
+      {{/animated-value}}
     </div>
 
     <div class="w-2/3">
