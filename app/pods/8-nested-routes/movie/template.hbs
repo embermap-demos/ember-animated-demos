@@ -1,6 +1,6 @@
 <div class="flex justify-center overflow-hidden">
   <div class="w-full flex-no-shrink">
-    <div class="py-6 flex flex-col items-center">
+    <div class="flex flex-col items-center">
       <div class="max-w-md mx-auto">
         <AnimatedContainer>
           {{#animated-value
@@ -9,7 +9,7 @@
             initialInsertion=this.appState.didRender
             duration=750
           }}
-            <div class="pt-8 text-sm font-semibold flex items-center uppercase">
+            <div class="pt-6 text-sm font-semibold flex items-center uppercase">
               {{#link-to
                 "8-nested-routes"
                 class="inline-block no-underline text-grey hover:text-grey-darker"
