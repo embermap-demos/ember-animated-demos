@@ -36,6 +36,7 @@
     "ember-cli-htmlbars": "^3.0.0",
     "ember-cli-htmlbars-inline-precompile": "^1.0.3",
     "ember-cli-inject-live-reload": "^1.8.2",
+    "ember-cli-mirage": "^1.1.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-tailwind": "^0.7.0",
     "ember-cli-uglify": "^2.1.0",
@@ -51,6 +52,7 @@
     "faker": "^4.1.0",
     "loader.js": "^4.7.0",
     "lodash-es": "^4.17.11",
+    "marked": "^0.7.0",
     "prettier": "chadian/prettier#improve-curly-text-spacing",
     "qunit-dom": "^0.8.0"
   },

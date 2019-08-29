@@ -15,7 +15,7 @@ Router.map(function() {
   this.route("6-between-lists");
   this.route("7-selected-item");
   this.route("8-nested-routes", function() {
-    this.route("word", { path: ":word_id" });
+    this.route("movie", { path: ":movie_id" });
   });
 });
 
