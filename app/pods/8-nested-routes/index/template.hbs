@@ -1,0 +1,21 @@
+<div class="pt-8 flex flex-wrap">
+  {{#each this.model as |movie|}}
+    <div class="px-2 w-1/5 mb-4">
+      {{#animated-value
+        movie
+        use=this.transition
+        finalRemoval=this.appState.didRender
+        initialInsertion=this.appState.didRender
+        duration=750 as |movie|
+      }}
+        {{#link-to
+          "8-nested-routes.movie"
+          movie.id
+          class="inline-block no-underline"
+        }}
+          <img src="{{movie.posterUrl}}" />
+        {{/link-to}}
+      {{/animated-value}}
+    </div>
+  {{/each}}
+</div>
