@@ -1,0 +1,9 @@
+<div class="pt-8 flex flex-wrap">
+  {{#each this.model as |movie|}}
+    <div class="w-1/5 px-2 mb-4">
+      {{#link-to '8-nested-routes.movie' movie.id}}
+        <img src={{movie.posterUrl}} alt="" />
+      {{/link-to}}
+    </div>
+  {{/each}}
+</div>
