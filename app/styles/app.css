@@ -3,7 +3,3 @@
 .z-1 {
   z-index: 1;
 }
-
-.transition {
-  transition: all 0.25s;
-}

@@ -52,7 +52,6 @@
     "faker": "^4.1.0",
     "loader.js": "^4.7.0",
     "lodash-es": "^4.17.11",
-    "marked": "^0.7.0",
     "prettier": "chadian/prettier#improve-curly-text-spacing",
     "qunit-dom": "^0.8.0"
   },
