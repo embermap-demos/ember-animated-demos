@@ -1,8 +1,12 @@
 <div class="pt-8 flex flex-wrap">
   {{#each this.model as |movie|}}
     <div class="w-1/5 px-2 mb-4">
-      {{#animated-value movie use=this.transition as |value|}}
-        {{#link-to "8-nested-routes.movie" value.id class='inline-block'}}
+      {{#animated-value
+        movie
+        use=this.transition
+        initialInsertion=this.appState.didRender as |value|
+      }}
+        {{#link-to "8-nested-routes.movie" value.id class="inline-block"}}
           <img src={{value.posterUrl}} alt="" />
         {{/link-to}}
       {{/animated-value}}
