@@ -1,12 +1,18 @@
 <div class="max-w-md mx-auto">
-  <div class="pt-6 text-sm font-semibold flex items-center uppercase">
-    {{#link-to
-      "8-nested-routes"
-      class="inline-block no-underline text-grey hover:text-grey-darker"
-    }}
-      {{fa-icon "chevron-left" class="mr-2"}} Back
-    {{/link-to}}
-  </div>
+  {{#animated-value
+    use=this.fade
+    initialInsertion=this.appState.didRender
+    finalRemoval=true as |value|
+  }}
+    <div class="pt-6 text-sm font-semibold flex items-center uppercase">
+      {{#link-to
+        "8-nested-routes"
+        class="inline-block no-underline text-grey hover:text-grey-darker"
+      }}
+        {{fa-icon "chevron-left" class="mr-2"}} Back
+      {{/link-to}}
+    </div>
+  {{/animated-value}}
 
   <div class="pt-8 flex">
     <div class="w-1/3">
@@ -18,56 +24,62 @@
     </div>
 
     <div class="w-2/3">
-      <div class="pl-8">
-        <h1 class="text-4xl leading-tight font-bold">
-          {{this.model.title}}
-        </h1>
-        <p class="mt-4">
-          {{this.model.description}}
-        </p>
-        <div class="flex flex-wrap">
-          <div class="w-1/2">
-            <div class="mt-6">
-              <p class="uppercase text-grey font-semibold text-xs">
-                Director
-              </p>
-              <p class="font-semibold">
-                {{this.model.director}}
-              </p>
+      {{#animated-value
+        use=this.fade
+        initialInsertion=this.appState.didRender
+        finalRemoval=true as |value|
+      }}
+        <div class="pl-8">
+          <h1 class="text-4xl leading-tight font-bold">
+            {{this.model.title}}
+          </h1>
+          <p class="mt-4">
+            {{this.model.description}}
+          </p>
+          <div class="flex flex-wrap">
+            <div class="w-1/2">
+              <div class="mt-6">
+                <p class="uppercase text-grey font-semibold text-xs">
+                  Director
+                </p>
+                <p class="font-semibold">
+                  {{this.model.director}}
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="w-1/2">
-            <div class="mt-6">
-              <p class="uppercase text-grey font-semibold text-xs">
-                Rotten Tomatoes
-              </p>
-              <p class="font-semibold">
-                {{this.model.rottenTomatoes}}%
-              </p>
+            <div class="w-1/2">
+              <div class="mt-6">
+                <p class="uppercase text-grey font-semibold text-xs">
+                  Rotten Tomatoes
+                </p>
+                <p class="font-semibold">
+                  {{this.model.rottenTomatoes}}%
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="w-1/2">
-            <div class="mt-6">
-              <p class="uppercase text-grey font-semibold text-xs">
-                Release date
-              </p>
-              <p class="font-semibold">
-                {{this.model.releaseDate}}
-              </p>
+            <div class="w-1/2">
+              <div class="mt-6">
+                <p class="uppercase text-grey font-semibold text-xs">
+                  Release date
+                </p>
+                <p class="font-semibold">
+                  {{this.model.releaseDate}}
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="w-1/2">
-            <div class="mt-6">
-              <p class="uppercase text-grey font-semibold text-xs">
-                Genre
-              </p>
-              <p class="font-semibold">
-                {{this.model.genre}}
-              </p>
+            <div class="w-1/2">
+              <div class="mt-6">
+                <p class="uppercase text-grey font-semibold text-xs">
+                  Genre
+                </p>
+                <p class="font-semibold">
+                  {{this.model.genre}}
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      {{/animated-value}}
     </div>
   </div>
 </div>
